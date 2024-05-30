@@ -1,0 +1,55 @@
+.btn {
+  --color: #609615;
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+}
+
+.btn::before,
+.btn::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: all 0.5s ease;
+}
+
+.btn::before {
+  top: 50%;
+  left: 50%;
+}
+
+.btn::after {
+  top: 50%;
+  left: 50%;
+}
+
+.btn:hover::before,
+.btn:hover::after {
+  height: 500%;
+  width: 500%;
+}
+
+.btn:hover {
+  color: rgb(255, 255, 255);
+  background-color: var(--color);
+}
+
+.btn:active {
+  filter: brightness(0.8);
+}
